@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garaglib - Trouvez et réservez votre garage automobile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .hero-bg {
+            background-image: url('https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header Component -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-car text-blue-600 text-2xl mr-2"></i>
+                <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">Garaglib</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="text-blue-600 font-medium">Accueil</a>
+                <a href="#" class="text-blue-600 font-medium">Espace Client</a>
+                <a href="#" class="text-blue-600 font-medium">Espace Garage</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-96 flex items-center justify-center text-white">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold">Recherchez un garage par ville ou code postal</h2>
+            <div class="relative w-full max-w-2xl mx-auto">
+                <input 
+                    type="text" 
+                    placeholder="Rechercher un garage par ville ou code postal..." 
+                    class="w-full mt-4 p-4 pr-12 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800"
+                    id="searchInput"
+                >
+                <button 
+                    class="absolute right-3 top-7 text-blue-600 hover:text-blue-800"
+                    onclick="searchGarages()"
+                >
+                    <i class="fas fa-search text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Garage List Section -->
+    <section class="container mx-auto px-4 py-8">
+        <h3 class="text-2xl font-semibold mb-4">Garages Disponibles</h3>
+        <div id="garage-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Garage Card 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <img src="https://images.pexels.com/photos/163945/pexels-photo-163945.jpeg" alt="Garage Auto" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <div class="flex justify-between items-start">
+                        <h4 class="text-xl font-bold text-gray-800">Garage du Centre</h4>
+                        <div class="flex items-center text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span class="ml-1 text-gray-600">4.8</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mt-2">
+                        <i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>
+                        75015 Paris
+                    </p>
+                    <div class="mt-3 flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Vidange</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pneumatiques</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Carrosserie</span>
+                    </div>
+                    <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors duration-300">
+                        Réserver
+                    </button>
+                </div>
+            </div>
+
+            <!-- Garage Card 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <img src="https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg" alt="Garage Auto" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <div class="flex justify-between items-start">
+                        <h4 class="text-xl font-bold text-gray-800">Auto Service Pro</h4>
+                        <div class="flex items-center text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span class="ml-1 text-gray-600">4.5</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mt-2">
+                        <i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>
+                        69002 Lyon
+                    </p>
+                    <div class="mt-3 flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Diagnostic</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Freinage</span>
+                    </div>
+                    <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors duration-300">
+                        Réserver
+                    </button>
+                </div>
+            </div>
+
+            <!-- Garage Card 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <img src="https://images.pexels.com/photos/1149137/pexels-photo-1149137.jpeg" alt="Garage Auto" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <div class="flex justify-between items-start">
+                        <h4 class="text-xl font-bold text-gray-800">Mécanique Express</h4>
+                        <div class="flex items-center text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span class="ml-1 text-gray-600">4.9</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mt-2">
+                        <i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>
+                        13001 Marseille
+                    </p>
+                    <div class="mt-3 flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Moteur</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Climatisation</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Électricité</span>
+                    </div>
+                    <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors duration-300">
+                        Réserver
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Garaglib. Tous droits réservés.</p>
+            <a href="#" class="text-blue-400">Inscrire mon garage</a>
+        </div>
+    </footer>
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription Garage - Garaglib</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .form-section {
+            background-image: url('https://images.pexels.com/photos/163945/pexels-photo-163945.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <i class="fas fa-car text-blue-600 text-2xl mr-2"></i>
+                <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">Garaglib</h1>
+            </a>
+            <nav class="flex space-x-6">
+                <a href="index.html" class="text-blue-600 font-medium">Accueil</a>
+                <a href="garage-dashboard.html" class="text-blue-600 font-medium">Espace Garage</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container mx-auto px-4 py-12">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <!-- Form Section -->
+                    <div class="p-8 md:w-2/3">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Inscrivez votre garage</h2>
+                        
+                        <form id="garageForm" class="space-y-6">
+                            <!-- Garage Info -->
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-700 mb-4 border-b pb-2">Informations du garage</h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label for="garageName" class="block text-sm font-medium text-gray-700">Nom du garage*</label>
+                                        <input type="text" id="garageName" name="garageName" required
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="address" class="block text-sm font-medium text-gray-700">Adresse*</label>
+                                        <input type="text" id="address" name="address" required
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label for="city" class="block text-sm font-medium text-gray-700">Ville*</label>
+                                            <input type="text" id="city" name="city" required
+                                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                        </div>
+                                        <div>
+                                            <label for="postalCode" class="block text-sm font-medium text-gray-700">Code postal*</label>
+                                            <input type="text" id="postalCode" name="postalCode" required
+                                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Contact Info -->
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-700 mb-4 border-b pb-2">Coordonnées</h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-700">Email*</label>
+                                        <input type="email" id="email" name="email" required
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="phone" class="block text-sm font-medium text-gray-700">Téléphone*</label>
+                                        <input type="tel" id="phone" name="phone" required
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Services -->
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-700 mb-4 border-b pb-2">Services proposés</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="flex items-center">
+                                        <input id="oilChange" name="services" type="checkbox" value="Vidange"
+                                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        <label for="oilChange" class="ml-2 block text-sm text-gray-700">Vidange</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input id="tires" name="services" type="checkbox" value="Pneumatiques"
+                                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        <label for="tires" class="ml-2 block text-sm text-gray-700">Pneumatiques</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input id="diagnostic" name="services" type="checkbox" value="Diagnostic"
+                                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        <label for="diagnostic" class="ml-2 block text-sm text-gray-700">Diagnostic</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input id="bodywork" name="services" type="checkbox" value="Carrosserie"
+                                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        <label for="bodywork" class="ml-2 block text-sm text-gray-700">Carrosserie</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Disponibilités -->
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-700 mb-4 border-b pb-2">Disponibilités</h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label for="availabilityDays" class="block text-sm font-medium text-gray-700">Jours disponibles*</label>
+                                        <select id="availabilityDays" name="availabilityDays" required
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                            <option value="">Sélectionnez un jour</option>
+                                            <option value="lundi">Lundi</option>
+                                            <option value="mardi">Mardi</option>
+                                            <option value="mercredi">Mercredi</option>
+                                            <option value="jeudi">Jeudi</option>
+                                            <option value="vendredi">Vendredi</option>
+                                            <option value="samedi">Samedi</option>
+                                            <option value="dimanche">Dimanche</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="availabilityHours" class="block text-sm font-medium text-gray-700">Heures disponibles*</label>
+                                        <input type="text" id="availabilityHours" name="availabilityHours" required
+                                            placeholder="Ex: 09:00 - 12:00, 14:00 - 18:00"
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit -->
+                            <div class="pt-4">
+                                <button type="submit"
+                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-300">
+                                    S'inscrire et procéder au paiement
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Info Section -->
+                    <div class="form-section text-white p-8 md:w-1/3 flex flex-col justify-center">
+                        <div class="bg-black bg-opacity-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-bold mb-4">Pourquoi s'inscrire ?</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                    <span>Augmentez votre visibilité</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                    <span>Gérez facilement vos réservations</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                    <span>Recevez des avis de clients satisfaits</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Garaglib. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Client - Garaglib</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <i class="fas fa-car text-blue-600 text-2xl mr-2"></i>
+                <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">Garaglib</h1>
+            </a>
+            <nav class="flex space-x-6">
+                <a href="index.html" class="text-blue-600 font-medium">Accueil</a>
+                <a href="#" class="text-blue-800 font-semibold border-b-2 border-blue-600">Mon Compte</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold mb-6">Mon Espace Client</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Mes Réservations -->
+            <div class="md:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold mb-4 flex items-center">
+                    <i class="fas fa-calendar-alt text-blue-500 mr-2"></i>
+                    Mes Réservations
+                </h3>
+                
+                <div class="space-y-4">
+                    <!-- Reservation Card with Availability -->
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-bold">Garage du Centre</h4>
+                                <p class="text-sm text-gray-600">15/06/2023 à 10:00</p>
+                                <p class="text-sm mt-1">Vidange complète</p>
+                                
+                                <!-- Availability Slot -->
+                                <div class="mt-2">
+                                    <p class="text-xs text-gray-500">Disponibilités :</p>
+                                    <div class="flex flex-wrap gap-2 mt-1">
+                                        <span class="bg-blue-50 text-blue-600 text-xs px-2 py-1 rounded-full">Lun 09:00-12:00</span>
+                                        <span class="bg-blue-50 text-blue-600 text-xs px-2 py-1 rounded-full">Mar 14:00-18:00</span>
+                                        <span class="bg-blue-50 text-blue-600 text-xs px-2 py-1 rounded-full">Mer 10:00-12:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Confirmée</span>
+                        </div>
+                    </div>
+
+                    <!-- Reservation Card -->
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-bold">Auto Service Pro</h4>
+                                <p class="text-sm text-gray-600">22/06/2023 à 14:30</p>
+                                <p class="text-sm mt-1">Contrôle technique</p>
+                            </div>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">En attente</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profil Client -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold mb-4 flex items-center">
+                    <i class="fas fa-user-circle text-blue-500 mr-2"></i>
+                    Mon Profil
+                </h3>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Nom complet</label>
+                        <p class="mt-1">Jean Dupont</p>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Email</label>
+                        <p class="mt-1">jean.dupont@example.com</p>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Téléphone</label>
+                        <p class="mt-1">06 12 34 56 78</p>
+                    </div>
+                    
+                    <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors duration-300">
+                        Modifier mon profil
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Garaglib. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="/scripts/main.js"></script>
+</body>
+</html>
